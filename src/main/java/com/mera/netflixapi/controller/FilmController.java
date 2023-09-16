@@ -22,11 +22,13 @@ public class FilmController {
     }
 
     @GetMapping("/all")
+    @CrossOrigin(origins = "*")
     public List<Film> getAllMovies() {
         return filmRepository.findAll();
     }
 
     @GetMapping("/{id}")
+    @CrossOrigin(origins = "*")
     public ResponseEntity<?> getSpecificFilm(@PathVariable int id) {
         Optional<Film> film = filmRepository.findById(id);
 
@@ -38,6 +40,7 @@ public class FilmController {
     }
 
     @GetMapping("/category/{category}")
+    @CrossOrigin(origins = "*")
     public ResponseEntity<?> getFilmByCategory(@PathVariable String category) {
         List<Film> films = filmRepository.findByCategory(category);
         if (films.isEmpty()) {
@@ -48,11 +51,13 @@ public class FilmController {
     }
 
     @PostMapping("/add")
+    @CrossOrigin(origins = "*")
     public Film addFilm(@RequestBody Film film) {
         return filmRepository.save(film);
     }
 
     @DeleteMapping("/delete/{id}")
+    @CrossOrigin(origins = "*")
     public String DeleteFilm(@PathVariable int id) {
         Optional<Film> film = filmRepository.findById(id);
         if (film.isPresent()) {
@@ -64,6 +69,7 @@ public class FilmController {
     }
 
     @PutMapping("/update")
+    @CrossOrigin(origins = "*")
     public Film updateFilm(@RequestBody Film film) {
         return filmRepository.save(film);
     }
