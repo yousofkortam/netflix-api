@@ -1,0 +1,5 @@
+com\mera\netflixapi\NetflixApiApplication.class
+com\mera\netflixapi\exception\NotFound.class
+com\mera\netflixapi\repository\FilmRepository.class
+com\mera\netflixapi\entity\Film.class
+com\mera\netflixapi\controller\FilmController.class
